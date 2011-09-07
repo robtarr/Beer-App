@@ -1,0 +1,85 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Beer App</title>
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <script src="js/lib/modernizr.js"></script>
+  
+  <!-- load templates -->
+  <script id="beer-list-tpl" type="text/x-template">
+    <a href="#" class="favorite" title="favorite" alt="favorite">&#x2605;</a>
+    <div class="beer">
+      <span class="name">{{name}}</span>
+      {{#if brewery}}<span class="brewery">{{brewery}}</span>{{/if}}
+    </div>
+    <a href="#" class="delete" title="recycle">&#x267A;</a>
+  </script>
+  
+  <script id="my-beers-tpl" type="text/x-template">
+    <div class="beer">
+      <span class="name">{{name}}</span>
+      {{#if brewery}}<span class="brewery">{{brewery}}</span>{{/if}}
+    </div>
+    <div class="controls">
+      <div class="ratings-container">
+        <input type="range" class="rating" value="{{rating}}" min="1" max="5">
+        {{#list rating}}{{/list}}
+      </div>
+      <a href="#" class="delete" title="recycle">&#x267A;</a>
+    </div>
+  </script>
+  
+  <!-- load script files -->
+  <script src="js/lib/LAB.js"></script>
+  <script>
+    $LAB
+      .script("//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js")
+      .script("js/lib/underscore-1.1.6.js")
+      .script("js/lib/backbone.js")
+      .script("js/lib/backbone-localstorage.js")
+      .script("js/lib/handlebars.js")
+      .wait()
+      .script("js/lib/pubsub.js")
+      .wait()
+      .script("js/beer.js")
+      .script("js/favorite.js")
+      .script("js/app.js");      
+  </script>
+</head>
+
+<body>
+  <div>
+    <header>
+      <h1>My Favorite Beers App</h1>
+    </header>
+    
+    <div id="beerapp">
+      <article>
+        <h1>Beer List</h1>
+        <a href="#add" class="add-beer">Your beer's not on the list?</a>
+        <fieldset id="add" class="add-beer">
+          <a href="#" class="close">&times;</a>
+          <label for="new-beer">Name</label>
+          <input type="text" id="new-beer" placeholder="Beer Name">
+          <label for="new-brewery">Brewery</label>
+          <input type="text" id="new-brewery" placeholder="Brewery">
+          <input type="submit" value="Add">
+        </fieldset>
+        <ul id="beer-list" class="beer-list">
+        </ul>
+      </article>
+      <article>
+        <h1>My Fav Beers</h1>
+        <ul id="my-beers" class="favorites beer-list">
+        </ul>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

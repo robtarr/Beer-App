@@ -1,0 +1,22 @@
+<script id="beer-list-tpl" type="text/x-template">
+  <a href="#" class="favorite" title="favorite" alt="favorite">&#x2605;</a>
+  <div class="beer">
+    <span class="name">{{name}}</span>
+    {{#if brewery}}<span class="brewery">{{brewery}}</span>{{/if}}
+  </div>
+  <a href="#" class="delete" title="recycle">&#x267A;</a>
+</script>
+
+<script id="my-beers-tpl" type="text/x-template">
+  <div class="beer">
+    <span class="name">{{name}}</span>
+    {{#if brewery}}<span class="brewery">{{brewery}}</span>{{/if}}
+  </div>
+  <div class="controls">
+    <div class="ratings-container">
+      <input type="range" class="rating" value="{{rating}}" min="1" max="5">
+      {{#list rating}}{{/list}}
+    </div>
+    <a href="#" class="delete" title="recycle">&#x267A;</a>
+  </div>
+</script>

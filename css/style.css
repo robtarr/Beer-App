@@ -1,0 +1,204 @@
+/* @group Fonts */
+
+@font-face {
+  font-family: 'BebasRegular';
+  src: url('../type/BEBAS___-webfont.eot');
+  src: url('../type/BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../type/BEBAS___-webfont.woff') format('woff'),
+       url('../type/BEBAS___-webfont.ttf') format('truetype'),
+       url('../type/BEBAS___-webfont.svg#BebasRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CantarellRegular';
+  src: url('../type/Cantarell-Regular-webfont.eot');
+  src: url('../type/Cantarell-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../type/Cantarell-Regular-webfont.woff') format('woff'),
+       url('../type/Cantarell-Regular-webfont.ttf') format('truetype'),
+       url('../type/Cantarell-Regular-webfont.svg#CantarellRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* @end */
+
+/* @group Site */
+
+body {
+  background: url('../i/whitey.png');
+  font-family: CantarellRegular, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  margin: 0;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.4);  
+}
+
+h1 {
+  color: #f5f5f5;
+  font-family: BebasRegular, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  font-size: 4em;
+  font-weight: bold;
+  margin: 0.4em;
+  padding: 0 0 .1em;
+  word-spacing: 0.2em;
+}
+
+article h1 {
+  color: #999;
+  font-size: 3em;
+}
+
+article {
+  float: left;
+  margin: 0 8.45% 0 2.45%;
+  width: 38%;
+}
+
+/* @group New Beer */
+a.add-beer {
+  float: left;
+}
+fieldset.add-beer {
+  background: rgba(0, 0, 0, .2);
+  border: none;
+  clear: left;
+  display: none;
+  float: left;
+  -webkit-transition: height 20s ease-out;
+     -moz-transition: height 20s ease-out;
+	   -o-transition: height 20s ease-out;
+  -webkit-transition: opacity 0.5s ease-out;
+     -moz-transition: opacity 0.5s ease-out;
+	   -o-transition: opacity 0.5s ease-out;
+}
+fieldset.add-beer.open {
+  height: 8.5em;
+  opacity: 1;
+}
+.close {
+  color: #555;
+  display: block;
+  float: right;
+  text-decoration: none;
+}
+input[type=text],
+label {
+  clear: left;
+  color: #555;
+  float: left;
+  font-family: CantarellRegular, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  font-size: 1em;
+  padding: 0.1em;
+  width: 15em;
+}
+label:after {
+  content: ":";
+}
+input[type=submit] {
+  clear: left;
+  float: left;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Beer List */
+
+.beer-list {
+  clear: left;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  float: left;
+  width: 100%;
+}
+
+.favorite {
+  background: #ddd;
+  border: 2px solid #fef34b;
+  border-radius: 20px;
+  color: #fef34b;
+  display: block;
+  float: left;
+  font-size: 0.8em;
+  margin-top: 5px;
+  text-align: center;
+  text-decoration: none;
+  width: 21px;
+}
+
+.beer {
+  float: left;
+  margin-bottom: .3em;
+}
+.name {
+  float: left;
+  font-size: 1em;
+}
+.brewery {
+  clear: left;
+  float: left;
+  font-size: .8em;
+}
+
+.delete {
+  background: #ddd;
+  border: 2px solid #c10e17;
+  border-radius: 20px;
+  color: #c10e17;
+  display: block;
+  float: right;
+  font-size: 0.8em;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 21px;
+}
+
+/* @end */
+
+/* @group Fav List */
+
+.favorites.beer-list li {
+  height: 50px;
+}
+
+.controls {
+  float: right;
+}
+.ratings-container {
+  float: left;
+  height: 50px;
+  position: relative;
+  width: 130px;
+}
+.rating {
+  height: 40px;
+  left: 3px;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 119px;
+  z-index: 10;
+}
+.pint-glasses {
+  left: 0;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  top: 0;
+}
+.pint-glasses li {
+  float: left;
+  margin: 0 5px 0 0;
+  width: auto;
+}
+
+/* @end */

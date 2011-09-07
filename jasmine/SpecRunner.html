@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Jasmine Spec Runner</title>
+
+  <!-- Templates -->
+  <script id="beer-list-tpl" type="text/x-template">
+    <a href="#" class="favorite" title="favorite" alt="favorite">&#x2605;</a>
+    <div class="beer">
+      <span class="name">{{name}}</span>
+      {{#if brewery}}<span class="brewery">{{brewery}}</span>{{/if}}
+    </div>
+    <a href="#" class="delete" title="recycle">&#x267A;</a>
+  </script>
+
+  <script id="my-beers-tpl" type="text/x-template">
+    <div class="beer">
+      <span class="name">{{name}}</span>
+      {{#if brewery}}<span class="brewery">{{brewery}}</span>{{/if}}
+    </div>
+    <div class="controls">
+      <div class="ratings-container">
+        <input type="range" class="rating" value="{{rating}}" min="1" max="5">
+        {{#list rating}}{{/list}}
+      </div>
+      <a href="#" class="delete" title="recycle">&#x267A;</a>
+    </div>
+  </script>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-1.1.0/jasmine_favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="lib/jasmine-1.1.0/jasmine.css">
+  <script type="text/javascript" src="lib/jasmine-1.1.0/jasmine.js"></script>
+  <script type="text/javascript" src="lib/jasmine-1.1.0/jasmine-html.js"></script>
+  <script type="text/javascript" src="lib/jasmine-1.1.0/jquery-jasmine.js"></script>
+  <script type="text/javascript" src="../js/lib/jquery-1.6.2.min.js"></script>
+
+  <!-- include source files here... -->
+  <script type="text/javascript" src="spec/BeerSpec.js"></script>
+
+  <!-- include spec files here... -->
+  <script type="text/javascript" src="../js/lib/underscore-1.1.6.js"></script>
+  <script type="text/javascript" src="../js/lib/backbone.js"></script>
+  <script type="text/javascript" src="../js/lib/backbone-localstorage.js"></script>
+  <script type="text/javascript" src="../js/lib/handlebars.js"></script>
+  <script type="text/javascript" src="../js/lib/pubsub.js"></script>
+  
+  <script type="text/javascript" src="../js/beer.js"></script>
+  <script type="text/javascript" src="../js/favorite.js"></script>
+  <script type="text/javascript" src="../js/app.js"></script>
+
+  <script type="text/javascript">
+  
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var trivialReporter = new jasmine.TrivialReporter();
+
+      jasmineEnv.addReporter(trivialReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return trivialReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>
